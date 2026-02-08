@@ -1,4 +1,4 @@
-export default function GuestList({ GUEST_DATA, setSelectedGuest }) {
+export default function GuestList({ guestList, setSelectedGuest }) {
   return (
     <section>
       <h1>Guest List</h1>
@@ -11,18 +11,15 @@ export default function GuestList({ GUEST_DATA, setSelectedGuest }) {
           </tr>
         </thead>
         <tbody>
-          {GUEST_DATA.map((guest) => {
-            console.log(guest);
-            return (
-              <tr key={guest.id} onClick={() => setSelectedGuest(guest)}>
-                <td>{guest.name}</td>
-                <td>{guest.email}</td>
-                <td>{guest.phone}</td>
-              </tr>
-            );
-          })}
+          {guestList?.map((guest) => (
+            <tr key={guest.id} onClick={() => setSelectedGuest(guest)}>
+              <td>{guest.name}</td>
+              <td>{guest.email}</td>
+              <td>{guest.phone}</td>
+            </tr>
+          ))}
           <tr>
-            <td colSpan="3">Testing</td>
+            <td colSpan="3">Select a guest to see more details.</td>
           </tr>
         </tbody>
       </table>

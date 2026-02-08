@@ -1,5 +1,4 @@
 export default function Guest({ guest, setSelectedGuest }) {
-  console.log(guest);
   return (
     <section id="guestDetails">
       <h1>
